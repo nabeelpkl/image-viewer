@@ -23,28 +23,29 @@ class Login extends Component {
   }
 
   /**
-   * Function that handles any changes in the username field and updates state accordingly
+   *  handles any changes in the username field and updates state accordingly
    */
   inputUsernameChangeHandler = (e) => {
     this.setState({ username: e.target.value });
   };
 
   /**
-   * Function that handles any changes in the password field and updates state accordingly
+   *  handles any changes in the password field and updates state accordingly
    */
   inputPasswordChangeHandler = (e) => {
     this.setState({ password: e.target.value });
   };
 
   /**
-   * Function that handles what happens when we click the login button
+   *  handles what happens when we click the login button
    */
   loginClickHandler = () => {
     //Setting credentials in the login handler
-    let username = "InstaGrad";
-    let password = "Sass@123#";
+    let username = "1234";
+    let password = "1234";
 
-    let accessToken = "8661035776.d0fcd39.39f63ab2f88d4f9c92b0862729ee2784";
+    let accessToken =
+      "IGQVJVaFQ0VloxNHlYbkE3X1I5bWxsemZAGenZA1dEVhdFYyOERZANFR3STVxbTN6dXRhcWRfQTRYRGRHQy1SbEZAJUzAxSUpWZAlpJcVNUa056RHBZAdDk5OFhVdklJRGlZAcTg4VmhsYzEyNkhBc3Q3cXhjLXh6ZADNEOThRMGlr";
     if (this.state.username === "" || this.state.password === "") {
       // The usernameRequired and passwordRequired fields are used when we want to store the class to be assigned
       this.state.username === ""

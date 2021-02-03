@@ -9,7 +9,7 @@ import Button from "@material-ui/core/Button";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import { Redirect } from "react-router-dom";
 
-class Profile extends Component {
+class Login extends Component {
   constructor() {
     super();
     this.state = {
@@ -40,10 +40,14 @@ class Profile extends Component {
    * Function that handles what happens when we click the login button
    */
   loginClickHandler = () => {
-    let username = "";
-    let password = "";
+    //Setting credentials in the login handler
+    let username = "1234";
+    let password = "1234";
 
+    let accessToken =
+      "IGQVJVaFQ0VloxNHlYbkE3X1I5bWxsemZAGenZA1dEVhdFYyOERZANFR3STVxbTN6dXRhcWRfQTRYRGRHQy1SbEZAJUzAxSUpWZAlpJcVNUa056RHBZAdDk5OFhVdklJRGlZAcTg4VmhsYzEyNkhBc3Q3cXhjLXh6ZADNEOThRMGlr";
     if (this.state.username === "" || this.state.password === "") {
+      // The usernameRequired and passwordRequired fields are used when we want to store the class to be assigned
       this.state.username === ""
         ? this.setState({ usernameRequired: "dispBlock" })
         : this.setState({ usernameRequired: "dispNone" });
@@ -55,6 +59,9 @@ class Profile extends Component {
       this.state.username === username &&
       this.state.password === password
     ) {
+      // Setting token in session storage
+      sessionStorage.setItem("access-token", accessToken);
+      // Setting state so as to check and route to home page if login is successful.
       this.setState({
         isLoggedIn: true,
       });
@@ -128,4 +135,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+export default Login;
